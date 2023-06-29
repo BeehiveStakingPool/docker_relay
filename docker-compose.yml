@@ -1,0 +1,25 @@
+#docker-compose up -d --build
+version: "2.17.3"
+
+services:
+  preprod-relay:
+    container_name: preprod-relay
+    network_mode: "host"
+    build: ./
+    restart: always
+    volumes:
+      - /Users/snow/cnode/testnet/db/:/data/db/
+      - /Users/snow/cnode/testnet/files/preprod/:/data/config/
+      - /Users/snow/cnode/testnet/socket/:/data/socket/
+      - /Users/snow/cnode/testnet/keys/:/data/keys/
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+
+volumes:
+  cardano-node-db:
+  cardano-node-config:
+  cardano-node-socket:
+  cardano-node-keys:
