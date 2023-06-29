@@ -8,10 +8,10 @@ services:
     build: ./
     restart: always
     volumes:
-      - /Users/snow/cnode/testnet/db/:/data/db/
-      - /Users/snow/cnode/testnet/files/preprod/:/data/config/
-      - /Users/snow/cnode/testnet/socket/:/data/socket/
-      - /Users/snow/cnode/testnet/keys/:/data/keys/
+      - /PATH_TO/cnode/testnet/db/:/data/db/
+      - /PATH_TO/cnode/testnet/files/preprod/:/data/config/
+      - /PATH_TO/cnode/testnet/socket/:/data/socket/
+      - /PATH_TO/cnode/testnet/keys/:/data/keys/
     logging:
       driver: "json-file"
       options:
